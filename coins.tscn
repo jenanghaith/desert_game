@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cutglm2wwyygu"]
+[gd_scene load_steps=12 format=3 uid="uid://cutglm2wwyygu"]
 
+[ext_resource type="Script" uid="uid://dmgu8mlw6annf" path="res://scripts/coins.gd" id="1_665jj"]
 [ext_resource type="Texture2D" uid="uid://bpgj4qg6qxhu6" path="res://assets/KenneyAnimatedCoinsV3.png" id="1_tsooq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_665jj"]
@@ -63,6 +64,8 @@ animations = [{
 radius = 8.24621
 
 [node name="coins" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_665jj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 5)
@@ -73,3 +76,5 @@ frame_progress = 0.588471
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dwepe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

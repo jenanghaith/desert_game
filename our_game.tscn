@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dfap1fxx2ism1"]
+[gd_scene load_steps=72 format=3 uid="uid://dfap1fxx2ism1"]
 
 [ext_resource type="PackedScene" uid="uid://c2pp1jkgq1uh7" path="res://scenes/player.tscn" id="1_7pkjm"]
 [ext_resource type="Texture2D" uid="uid://dr7mob6meecj3" path="res://assets/desert tileset/png/Tile/1.png" id="1_71gan"]
@@ -35,6 +35,10 @@
 [ext_resource type="Texture2D" uid="uid://dg4fhx424giad" path="res://assets/bones/Bone (4).png" id="33_bde50"]
 [ext_resource type="Texture2D" uid="uid://dyinwo0w3i1ls" path="res://assets/desert tileset/png/Objects/Cactus (3).png" id="34_pftuh"]
 [ext_resource type="PackedScene" uid="uid://cutglm2wwyygu" path="res://coins.tscn" id="35_ffvlc"]
+[ext_resource type="PackedScene" uid="uid://b0urn78fsn38h" path="res://scenes/killzone.tscn" id="36_2munw"]
+[ext_resource type="PackedScene" uid="uid://w5asc0sc26mw" path="res://scenes/enimy_1.tscn" id="37_xqf5r"]
+[ext_resource type="PackedScene" uid="uid://bj43di5qcf6bg" path="res://scenes/enemy_2.tscn" id="38_631uo"]
+[ext_resource type="PackedScene" uid="uid://db20681msemcq" path="res://scenes/hidden.tscn" id="39_bde50"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_djwxq"]
 tile_data = PackedInt32Array(0, 21, 0, 1, 27, 0, 2, 27, 0, 3, 28, 0)
@@ -984,6 +988,12 @@ pattern_7 = SubResource("TileMapPattern_wtpjh")
 pattern_8 = SubResource("TileMapPattern_5cnf0")
 pattern_9 = SubResource("TileMapPattern_avjvu")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xqf5r"]
+distance = -4.07141
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bde50"]
+size = Vector2(20, 184.584)
+
 [node name="Our Game" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1053,19 +1063,20 @@ texture = ExtResource("19_5dhjt")
 
 [node name="player" parent="." instance=ExtResource("1_7pkjm")]
 z_index = 3
-position = Vector2(-859, 3391)
+position = Vector2(-859, 3395.03)
 scale = Vector2(0.553889, 0.585016)
+collision_layer = 3
 script = ExtResource("18_i3mqa")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(33.6361, -272.606)
 scale = Vector2(1.34545, 1.27386)
-zoom = Vector2(0.3, 0.3)
+zoom = Vector2(0.485, 0.485)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(11436, -3571)
-scale = Vector2(23.2066, 17.3396)
+position = Vector2(12374, -1652)
+scale = Vector2(23.2066, 18.4729)
 texture = ExtResource("29_msbi0")
 
 [node name="Bone(1)" type="Sprite2D" parent="."]
@@ -1110,3 +1121,520 @@ scale = Vector2(3.48, 3.48)
 [node name="coins2" parent="." instance=ExtResource("35_ffvlc")]
 position = Vector2(3146, 2631)
 scale = Vector2(3.48, 3.48)
+
+[node name="coins9" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6262, 3297)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins11" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6166, 3297)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins12" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6067, 3300)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins10" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6504, 3049)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins13" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6330, 3200)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins14" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6408, 3114)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins15" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6623, 3034)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins16" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6748, 3087)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins17" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6825, 3159)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins18" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6903, 3243)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins19" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6974, 3318)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins20" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7076, 3321)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins21" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7174, 3317)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins24" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7416, 3069)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins25" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7242, 3220)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins26" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7320, 3134)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins27" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7629, 3073)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins30" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7525, 3038)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins28" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7732, 3142)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins29" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7812, 3226)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins31" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7899, 3298)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins32" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(8003, 3297)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins68" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16116, 3357)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins91" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16013, 3357)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins81" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16214, 3353)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins82" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16456, 3105)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins83" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16282, 3256)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins84" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16360, 3170)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins85" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16669, 3109)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins86" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16565, 3074)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins87" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16772, 3178)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins88" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16852, 3262)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins89" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16939, 3334)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins90" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(17043, 3333)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins22" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6399, 647)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins23" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6497, 643)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins33" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6810, 223)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins34" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6880, 145)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins35" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6736, 311)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins36" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6562, 561)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins37" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6971, 72)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins38" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6614, 478)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins39" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(6674, 400)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins40" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7073, 47)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins41" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7162, 96)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins42" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7231, 165)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins43" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7317, 217)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins44" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7417, 220)
+scale = Vector2(3.48, 3.48)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(12374, -1652)
+scale = Vector2(23.2066, 18.4729)
+texture = ExtResource("29_msbi0")
+
+[node name="coins92" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(7943, -479)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins93" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(8043, -479)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins107" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9430, -1824)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins108" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9530, -1824)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins109" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9623, -1826)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins110" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9723, -1826)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins99" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(8484, -1012)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins100" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(8584, -1012)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins101" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(8723, -1288)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins102" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(8823, -1288)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins103" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(8994, -1559)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins104" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9094, -1559)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins105" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9236, -1821)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins106" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9336, -1821)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins96" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(8217, -741)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins97" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(8217, -741)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins98" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(8317, -741)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins49" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(10832, 641)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins50" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(10932, 644)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins51" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(11033, 639)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins52" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(11133, 642)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins65" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(13718, -2100)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins66" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(13818, -2097)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins67" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(13919, -2100)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins69" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(15779, -2082)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins70" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(15879, -2079)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins71" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(15980, -2082)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins72" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(16945, -1674)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins73" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(17045, -1671)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins74" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(17146, -1674)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins78" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(14762, -1670)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins79" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(14862, -1667)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins80" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(14963, -1670)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins75" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(17973, -2102)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins76" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(18073, -2099)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins77" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(18174, -2102)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins53" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9620, 1314)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins54" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9720, 1317)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins55" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9821, 1312)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins56" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9921, 1315)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins57" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(10848, 2137)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins58" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(10948, 2140)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins59" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(11049, 2135)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins60" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(11149, 2138)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins61" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9662, 2812)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins62" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9762, 2815)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins63" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9863, 2810)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins64" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(9963, 2813)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins3" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(3323, 2366)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins4" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(3410, 2367)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins5" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(3574, 2103)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins6" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(3661, 2104)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins7" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(3854, 1840)
+scale = Vector2(3.48, 3.48)
+
+[node name="coins8" parent="." instance=ExtResource("35_ffvlc")]
+position = Vector2(3941, 1841)
+scale = Vector2(3.48, 3.48)
+
+[node name="killzone" parent="." instance=ExtResource("36_2munw")]
+position = Vector2(6785, 4734)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+scale = Vector2(15.965, 15.965)
+shape = SubResource("WorldBoundaryShape2D_xqf5r")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="killzone"]
+position = Vector2(9242, 89)
+scale = Vector2(15.965, 15.965)
+shape = SubResource("WorldBoundaryShape2D_xqf5r")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="killzone"]
+position = Vector2(16102, 22)
+scale = Vector2(40.88, 40.88)
+shape = SubResource("WorldBoundaryShape2D_xqf5r")
+
+[node name="enimy1" parent="killzone" instance=ExtResource("37_xqf5r")]
+position = Vector2(2083, -3042)
+scale = Vector2(0.635, 0.635)
+
+[node name="enimy2" parent="killzone" instance=ExtResource("37_xqf5r")]
+position = Vector2(4683, -1474)
+scale = Vector2(0.635, 0.635)
+
+[node name="enimy4" parent="killzone" instance=ExtResource("37_xqf5r")]
+position = Vector2(4683, -1474)
+scale = Vector2(0.635, 0.635)
+
+[node name="enimy5" parent="killzone" instance=ExtResource("37_xqf5r")]
+position = Vector2(-1893, -6933)
+scale = Vector2(0.635, 0.635)
+
+[node name="enimy3" parent="killzone" instance=ExtResource("37_xqf5r")]
+position = Vector2(10908, -1447)
+scale = Vector2(0.635, 0.635)
+
+[node name="enemy2" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(-1812, -1404)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy3" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(-1203, -4524)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy5" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(3211, -6562)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy8" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(10374, -4526)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy6" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(7755, -5055)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy7" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(8377, -5068)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy11" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(8955, -5069)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy12" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(9561, -5073)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy13" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(10233, -5053)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy14" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(10930, -5057)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy15" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(11614, -5050)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy9" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(7169, -5069)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy10" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(6524, -5072)
+scale = Vector2(0.295, 0.295)
+
+[node name="enemy4" parent="killzone" instance=ExtResource("38_631uo")]
+position = Vector2(-4736, -4661)
+scale = Vector2(0.295, 0.295)
+
+[node name="hidden" parent="." instance=ExtResource("39_bde50")]
+position = Vector2(6417, 3165)
+
+[node name="flip" type="CollisionShape2D" parent="hidden"]
+position = Vector2(-176, 2)
+scale = Vector2(2.465, 2.465)
+shape = SubResource("RectangleShape2D_bde50")
+
+[connection signal="child_entered_tree" from="hidden" to="killzone/enemy2" method="_on_hidden_child_entered_tree"]

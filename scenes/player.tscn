@@ -1,20 +1,37 @@
-[gd_scene load_steps=67 format=3 uid="uid://c2pp1jkgq1uh7"]
+[gd_scene load_steps=82 format=3 uid="uid://c2pp1jkgq1uh7"]
 
+[ext_resource type="Texture2D" uid="uid://4j1dwtteqi4h" path="res://assets/adventure girl/Melee (1).png" id="1_4gjji"]
 [ext_resource type="Texture2D" uid="uid://dljyuayyod3ot" path="res://assets/adventure girl/Idle (1).png" id="1_lmwkj"]
 [ext_resource type="Texture2D" uid="uid://cpijmrbb1dtv" path="res://assets/adventure girl/Idle (2).png" id="2_k3r5w"]
+[ext_resource type="Texture2D" uid="uid://bfllqft2eooa0" path="res://assets/adventure girl/Melee (2).png" id="2_u2ulf"]
 [ext_resource type="Texture2D" uid="uid://dc0snbc8qhcmd" path="res://assets/adventure girl/Idle (3).png" id="3_1rslu"]
+[ext_resource type="Texture2D" uid="uid://cvcxj5warb2nq" path="res://assets/adventure girl/Melee (3).png" id="3_6e8lb"]
+[ext_resource type="Texture2D" uid="uid://biys3x4nhdqq" path="res://assets/adventure girl/Melee (4).png" id="4_2gdjj"]
 [ext_resource type="Texture2D" uid="uid://bak122sc40m5k" path="res://assets/adventure girl/Idle (4).png" id="4_3uyxa"]
 [ext_resource type="Texture2D" uid="uid://biltuc8jvsuov" path="res://assets/adventure girl/Idle (5).png" id="5_61y8d"]
+[ext_resource type="Texture2D" uid="uid://dypdjj66oalbd" path="res://assets/adventure girl/Melee (5).png" id="5_sc3ue"]
 [ext_resource type="Texture2D" uid="uid://d4hm8p4v1pv8o" path="res://assets/adventure girl/Idle (6).png" id="6_8icv6"]
+[ext_resource type="Texture2D" uid="uid://c3is41kg8ghms" path="res://assets/adventure girl/Melee (6).png" id="6_lxlsd"]
+[ext_resource type="Texture2D" uid="uid://cfgbfjode2wyc" path="res://assets/adventure girl/Melee (7).png" id="7_ha2mi"]
 [ext_resource type="Texture2D" uid="uid://ctlwtktvhe0kf" path="res://assets/adventure girl/Idle (7).png" id="7_mwn6v"]
+[ext_resource type="Texture2D" uid="uid://dmwu3xswx4td6" path="res://assets/adventure girl/Dead (1).png" id="8_apa73"]
 [ext_resource type="Texture2D" uid="uid://c5i2kda7mkq4n" path="res://assets/adventure girl/Idle (9).png" id="8_ms8fj"]
+[ext_resource type="Texture2D" uid="uid://cn7k6aovx8r8m" path="res://assets/adventure girl/Dead (2).png" id="9_74r1k"]
 [ext_resource type="Texture2D" uid="uid://coh4cm15dvem" path="res://assets/adventure girl/Idle (10).png" id="9_unmcv"]
+[ext_resource type="Texture2D" uid="uid://cqg1u13tqecay" path="res://assets/adventure girl/Dead (3).png" id="10_8svfe"]
+[ext_resource type="Texture2D" uid="uid://sy7lvrmo25sl" path="res://assets/adventure girl/Dead (4).png" id="11_2a3c5"]
 [ext_resource type="Texture2D" uid="uid://c3ujjllox4tin" path="res://assets/adventure girl/Jump (1).png" id="11_mbxdm"]
+[ext_resource type="Texture2D" uid="uid://pc2lcquma3o2" path="res://assets/adventure girl/Dead (5).png" id="12_42b1b"]
 [ext_resource type="Texture2D" uid="uid://crdpoqtqhsw5h" path="res://assets/adventure girl/Jump (2).png" id="12_rk7dk"]
+[ext_resource type="Texture2D" uid="uid://b8w8i86ujqylg" path="res://assets/adventure girl/Dead (6).png" id="13_h7ic4"]
 [ext_resource type="Texture2D" uid="uid://e0hh30y2a3fj" path="res://assets/adventure girl/Jump (3).png" id="13_uafw2"]
 [ext_resource type="Texture2D" uid="uid://bysktw4j2hrq1" path="res://assets/adventure girl/Jump (4).png" id="14_76puf"]
+[ext_resource type="Texture2D" uid="uid://cdwaw6q4fmb08" path="res://assets/adventure girl/Dead (7).png" id="14_au7lq"]
+[ext_resource type="Texture2D" uid="uid://nklln8kd1u77" path="res://assets/adventure girl/Dead (8).png" id="15_nubpm"]
 [ext_resource type="Texture2D" uid="uid://wkvj5f2l1ku3" path="res://assets/adventure girl/Jump (5).png" id="15_wd4sy"]
 [ext_resource type="Texture2D" uid="uid://7n01ae177yjc" path="res://assets/adventure girl/Jump (6).png" id="16_nqd4t"]
+[ext_resource type="Texture2D" uid="uid://ori2vj12pw03" path="res://assets/adventure girl/Dead (9).png" id="16_ua5cf"]
+[ext_resource type="Texture2D" uid="uid://bgrhy1wcdw1pv" path="res://assets/adventure girl/Dead (10).png" id="17_51ujp"]
 [ext_resource type="Texture2D" uid="uid://dq4f78i04tj8v" path="res://assets/adventure girl/Jump (7).png" id="17_tqjdw"]
 [ext_resource type="Texture2D" uid="uid://du88luxvegg6q" path="res://assets/adventure girl/Jump (8).png" id="18_naw67"]
 [ext_resource type="Texture2D" uid="uid://carmiacjr8a3" path="res://assets/adventure girl/Jump (9).png" id="19_fhkdx"]
@@ -27,7 +44,6 @@
 [ext_resource type="Texture2D" uid="uid://bb5phbye83edn" path="res://assets/adventure girl/Run (6).png" id="26_j3p37"]
 [ext_resource type="Texture2D" uid="uid://fhvis1wit1bw" path="res://assets/adventure girl/Run (7).png" id="27_j6lyf"]
 [ext_resource type="Texture2D" uid="uid://com0px1koetu5" path="res://assets/adventure girl/Run (8).png" id="28_j2xv7"]
-[ext_resource type="Texture2D" uid="uid://gxq30hiqmxbm" path="res://assets/adventure girl/Slide (1).png" id="29_130kv"]
 [ext_resource type="Texture2D" uid="uid://dmp04um2rqtm8" path="res://assets/adventure girl/Slide (2).png" id="30_d1cqh"]
 [ext_resource type="Texture2D" uid="uid://d0o7bcjy3tuob" path="res://assets/adventure girl/Slide (3).png" id="31_a340w"]
 [ext_resource type="Texture2D" uid="uid://rot5asdchohk" path="res://assets/adventure girl/Slide (4).png" id="32_nw78w"]
@@ -141,10 +157,6 @@ region = Rect2(0, 0, 641, 542)
 atlas = ExtResource("28_j2xv7")
 region = Rect2(0, 0, 641, 542)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bryfp"]
-atlas = ExtResource("29_130kv")
-region = Rect2(0, 0, 641, 542)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwpkg"]
 atlas = ExtResource("30_d1cqh")
 region = Rect2(0, 0, 641, 542)
@@ -163,6 +175,67 @@ region = Rect2(0, 0, 641, 542)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0tngs"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4gjji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u2ulf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6e8lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2gdjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sc3ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lxlsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ha2mi")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_apa73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_74r1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8svfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2a3c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_42b1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h7ic4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_au7lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nubpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ua5cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_51ujp")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gmgjv")
@@ -193,7 +266,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 12.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -257,12 +330,9 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 12.0
+"speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bryfp")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xwpkg")
 }, {
@@ -281,17 +351,18 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_487ah"]
-radius = 79.0
-height = 388.0
+radius = 98.0
+height = 404.0
 
 [node name="player" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(28, -246)
+position = Vector2(31, -243)
 sprite_frames = SubResource("SpriteFrames_0tngs")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.813564
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, -205)
+position = Vector2(-21, -202)
 shape = SubResource("CapsuleShape2D_487ah")
