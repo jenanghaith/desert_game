@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddx5r5tywnhv8"]
+
+[ext_resource type="Texture2D" uid="uid://v2k6udosiy5p" path="res://assets/desert tileset/png/Untitled 3.png" id="1_q06lf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q06lf"]
+size = Vector2(378, 51)
+
+[node name="moving platform" type="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(264, -344.5)
+shape = SubResource("RectangleShape2D_q06lf")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(272.5, -272.5)
+rotation = 0.00872665
+scale = Vector2(0.49537, 0.49537)
+texture = ExtResource("1_q06lf")
