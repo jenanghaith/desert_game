@@ -1,0 +1,114 @@
+[gd_scene load_steps=22 format=3 uid="uid://dbvg61t1vl04w"]
+
+[ext_resource type="Texture2D" uid="uid://hedefbbnmepv" path="res://assets/enimy/skeleton/appear/appear_1.png" id="1_j336i"]
+[ext_resource type="Texture2D" uid="uid://dj4b2d8yptol6" path="res://assets/enimy/skeleton/appear/appear_2.png" id="2_trw63"]
+[ext_resource type="Texture2D" uid="uid://uih50w5u0lpf" path="res://assets/enimy/skeleton/appear/appear_3.png" id="3_vuo3p"]
+[ext_resource type="Texture2D" uid="uid://dvlfmy10wfjsc" path="res://assets/enimy/skeleton/appear/appear_4.png" id="4_ls4kp"]
+[ext_resource type="Texture2D" uid="uid://cokc31lhx1vqr" path="res://assets/enimy/skeleton/appear/appear_5.png" id="5_b6om7"]
+[ext_resource type="Texture2D" uid="uid://c2ppvcq6vdj5n" path="res://assets/enimy/skeleton/appear/appear_6.png" id="6_udoqh"]
+[ext_resource type="Texture2D" uid="uid://kbel7yj5upks" path="res://assets/enimy/skeleton/appear/appear_7.png" id="7_oylh5"]
+[ext_resource type="Texture2D" uid="uid://btjuih36tttkk" path="res://assets/enimy/skeleton/appear/appear_8.png" id="8_efc34"]
+[ext_resource type="Texture2D" uid="uid://e87l2owhaumy" path="res://assets/enimy/skeleton/appear/appear_9.png" id="9_65dg5"]
+[ext_resource type="Texture2D" uid="uid://cj0h8rwwe741p" path="res://assets/enimy/skeleton/appear/appear_10.png" id="10_irvdo"]
+[ext_resource type="Texture2D" uid="uid://eqik21l1rtnd" path="res://assets/enimy/skeleton/walk/go_1.png" id="11_1w50m"]
+[ext_resource type="Texture2D" uid="uid://phf26k4gypoc" path="res://assets/enimy/skeleton/walk/go_2.png" id="12_p340q"]
+[ext_resource type="Texture2D" uid="uid://df1aityx8oaqf" path="res://assets/enimy/skeleton/walk/go_3.png" id="13_fr7vd"]
+[ext_resource type="Texture2D" uid="uid://otwww287csxp" path="res://assets/enimy/skeleton/walk/go_4.png" id="14_sxk4a"]
+[ext_resource type="Texture2D" uid="uid://cf5p2ij4u2qxt" path="res://assets/enimy/skeleton/walk/go_5.png" id="15_foxax"]
+[ext_resource type="Texture2D" uid="uid://c0ecpqhax6452" path="res://assets/enimy/skeleton/walk/go_6.png" id="16_tfx1o"]
+[ext_resource type="Texture2D" uid="uid://cseo6086ljk26" path="res://assets/enimy/skeleton/walk/go_7.png" id="17_e8jd0"]
+[ext_resource type="Texture2D" uid="uid://dfkl4pfy0hn6" path="res://assets/enimy/skeleton/walk/go_8.png" id="18_52xlh"]
+[ext_resource type="PackedScene" uid="uid://1jfg7pq568lg" path="res://killzone.tscn" id="19_pu2d5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sr7k2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j336i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_trw63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vuo3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ls4kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b6om7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_udoqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oylh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_efc34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_65dg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_irvdo")
+}],
+"loop": true,
+"name": &"appear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_1w50m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p340q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fr7vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sxk4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_foxax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tfx1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_e8jd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_52xlh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh3vv"]
+size = Vector2(127, 312)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sr7k2")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.185722
+flip_h = true
+
+[node name="killzone" parent="." instance=ExtResource("19_pu2d5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(34, 24)
+shape = SubResource("RectangleShape2D_yh3vv")
+
+[node name="RayCastright" type="RayCast2D" parent="."]
+position = Vector2(32, 0)
+target_position = Vector2(77, 0)
+
+[node name="RayCastleft" type="RayCast2D" parent="."]
+position = Vector2(32, 0)
+target_position = Vector2(-77, 0)

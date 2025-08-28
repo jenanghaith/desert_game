@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://diq7ua6s3nyyw"]
+
+[ext_resource type="Texture2D" uid="uid://btbnsc5ot3k3q" path="res://f.png" id="1_5rgpn"]
+[ext_resource type="Texture2D" uid="uid://bl0rcsuf7if3e" path="res://f2.png" id="2_c0nl8"]
+[ext_resource type="Texture2D" uid="uid://d05tckye5aap8" path="res://f1.png" id="3_1dtnr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c33a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5rgpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c0nl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1dtnr")
+}],
+"loop": true,
+"name": &"win",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqxq1"]
+size = Vector2(22, 127)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c33a7")
+animation = &"win"
+autoplay = "win"
+frame_progress = 0.853442
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(49, -0.5)
+shape = SubResource("RectangleShape2D_oqxq1")

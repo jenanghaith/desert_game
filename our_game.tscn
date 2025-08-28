@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://dfap1fxx2ism1"]
+[gd_scene load_steps=86 format=3 uid="uid://dfap1fxx2ism1"]
 
 [ext_resource type="PackedScene" uid="uid://c2pp1jkgq1uh7" path="res://scenes/player.tscn" id="1_7pkjm"]
 [ext_resource type="Texture2D" uid="uid://dr7mob6meecj3" path="res://assets/desert tileset/png/Tile/1.png" id="1_71gan"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://b16ktyj0nax34" path="res://assets/desert tileset/png/Objects/Grass (2).png" id="24_wetd0"]
 [ext_resource type="Texture2D" uid="uid://di615d7a0hiyc" path="res://assets/desert tileset/png/Objects/Skeleton.png" id="25_cmfc6"]
 [ext_resource type="Texture2D" uid="uid://cj4bn7dsxr7k0" path="res://assets/desert tileset/png/Objects/Cactus (1).png" id="25_msbi0"]
+[ext_resource type="PackedScene" uid="uid://dbvg61t1vl04w" path="res://enemy3.tscn" id="28_hs4nb"]
 [ext_resource type="Texture2D" uid="uid://cwg3n1feofgq" path="res://assets/desert tileset/png/Objects/Cactus (2).png" id="28_jm5e5"]
 [ext_resource type="Texture2D" uid="uid://bogx2ud4bmx72" path="res://assets/desert tileset/png/BG.png" id="29_msbi0"]
 [ext_resource type="Texture2D" uid="uid://h51a62vtrjx6" path="res://assets/bones/Bone (1).png" id="30_2munw"]
@@ -44,6 +45,8 @@
 [ext_resource type="AudioStream" uid="uid://bq3dqad3j66u1" path="res://assets/Caryil, The Desert of Dreams.mp3" id="42_73wax"]
 [ext_resource type="Texture2D" uid="uid://0y3q5fln6oir" path="res://assets/desert tileset/png/Objects/Grass (1).png" id="43_eh5hi"]
 [ext_resource type="Texture2D" uid="uid://bpek4auo7qmy4" path="res://assets/desert tileset/png/Objects/Tree.png" id="44_5lqh0"]
+[ext_resource type="PackedScene" uid="uid://diq7ua6s3nyyw" path="res://area_2d.tscn" id="46_lr0ma"]
+[ext_resource type="Script" uid="uid://b3p3rusnf6ff6" path="res://area_2d.gd" id="47_5vvvi"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_djwxq"]
 tile_data = PackedInt32Array(0, 21, 0, 1, 27, 0, 2, 27, 0, 3, 28, 0)
@@ -997,8 +1000,20 @@ pattern_8 = SubResource("TileMapPattern_5cnf0")
 pattern_9 = SubResource("TileMapPattern_avjvu")
 pattern_10 = SubResource("TileMapPattern_hs4nb")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bde50"]
-size = Vector2(20, 184.584)
+[sub_resource type="Animation" id="Animation_73wax"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15308, 3766)]
+}
 
 [sub_resource type="Animation" id="Animation_ffvlc"]
 resource_name = "new_animation"
@@ -1017,7 +1032,13 @@ tracks/0/keys = {
 "values": [Vector2(15308, 3766), Vector2(16311, 3766)]
 }
 
-[sub_resource type="Animation" id="Animation_73wax"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gs517"]
+_data = {
+&"RESET": SubResource("Animation_73wax"),
+&"new_animation": SubResource("Animation_ffvlc")
+}
+
+[sub_resource type="Animation" id="Animation_5lqh0"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1029,13 +1050,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(15308, 3766)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gs517"]
-_data = {
-&"RESET": SubResource("Animation_73wax"),
-&"new_animation": SubResource("Animation_ffvlc")
+"values": [Vector2(6281, 3766)]
 }
 
 [sub_resource type="Animation" id="Animation_eh5hi"]
@@ -1053,21 +1068,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(6281, 3766), Vector2(7262, 3766)]
-}
-
-[sub_resource type="Animation" id="Animation_5lqh0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(6281, 3766)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hs4nb"]
@@ -1127,6 +1127,12 @@ scale = Vector2(7.08582, 6.13164)
 text = "coins score : x"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Node2D" parent="player/Camera2D" instance=ExtResource("28_hs4nb")]
+position = Vector2(10216.1, -2012.82)
+
+[node name="Node2D2" parent="player/Camera2D" instance=ExtResource("28_hs4nb")]
+position = Vector2(12617.9, -4249.19)
 
 [node name="pickups" type="Node" parent="."]
 
@@ -1368,10 +1374,6 @@ scale = Vector2(3.48, 3.48)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="enimy1" parent="Enemies" instance=ExtResource("37_xqf5r")]
-position = Vector2(8822, 1730)
-scale = Vector2(0.635, 0.635)
-
 [node name="enimy2" parent="Enemies" instance=ExtResource("37_xqf5r")]
 position = Vector2(11468, 3260)
 scale = Vector2(0.635, 0.635)
@@ -1405,23 +1407,27 @@ position = Vector2(17159, 208)
 scale = Vector2(0.295, 0.295)
 
 [node name="enemy7" parent="Enemies" instance=ExtResource("38_631uo")]
-position = Vector2(15162, -334)
+position = Vector2(14593, -334)
 scale = Vector2(0.295, 0.295)
 
 [node name="enemy12" parent="Enemies" instance=ExtResource("38_631uo")]
-position = Vector2(16346, -339)
+position = Vector2(15626, -324)
 scale = Vector2(0.295, 0.295)
 
 [node name="enemy13" parent="Enemies" instance=ExtResource("38_631uo")]
-position = Vector2(17018, -319)
+position = Vector2(16711, -333)
 scale = Vector2(0.295, 0.295)
 
 [node name="enemy14" parent="Enemies" instance=ExtResource("38_631uo")]
 position = Vector2(17715, -323)
 scale = Vector2(0.295, 0.295)
 
+[node name="enemy15" parent="Enemies" instance=ExtResource("38_631uo")]
+position = Vector2(18469, -332)
+scale = Vector2(0.295, 0.295)
+
 [node name="enemy9" parent="Enemies" instance=ExtResource("38_631uo")]
-position = Vector2(13954, -335)
+position = Vector2(13541, -335)
 scale = Vector2(0.295, 0.295)
 
 [node name="objects" type="Node" parent="."]
@@ -1553,16 +1559,6 @@ texture = ExtResource("33_bde50")
 
 [node name="labels" type="Node" parent="."]
 
-[node name="hidden" parent="." instance=ExtResource("39_bde50")]
-position = Vector2(6339, 3160)
-
-[node name="Node" type="Node" parent="hidden"]
-
-[node name="flip" type="CollisionShape2D" parent="hidden"]
-position = Vector2(-176, 2)
-scale = Vector2(2.465, 2.465)
-shape = SubResource("RectangleShape2D_bde50")
-
 [node name="moving platform" parent="." instance=ExtResource("40_pftuh")]
 position = Vector2(15308, 3766)
 
@@ -1613,4 +1609,10 @@ position = Vector2(-1411.13, -4403)
 scale = Vector2(4.03914, 5.5)
 texture = ExtResource("44_5lqh0")
 
-[connection signal="child_entered_tree" from="hidden" to="Enemies/enemy2" method="_on_hidden_child_entered_tree"]
+[node name="hidden2" parent="." instance=ExtResource("39_bde50")]
+position = Vector2(-634, 3295)
+
+[node name="Area2D" parent="." instance=ExtResource("46_lr0ma")]
+position = Vector2(2558, 3212)
+scale = Vector2(2.96, 2.96)
+script = ExtResource("47_5vvvi")
