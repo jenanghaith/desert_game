@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="underground_maze"
-run/main_scene="uid://dfap1fxx2ism1"
+run/main_scene="uid://56nkyd3iwxdg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

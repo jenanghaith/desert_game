@@ -46,7 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://0y3q5fln6oir" path="res://assets/desert tileset/png/Objects/Grass (1).png" id="43_eh5hi"]
 [ext_resource type="Texture2D" uid="uid://bpek4auo7qmy4" path="res://assets/desert tileset/png/Objects/Tree.png" id="44_5lqh0"]
 [ext_resource type="PackedScene" uid="uid://diq7ua6s3nyyw" path="res://area_2d.tscn" id="46_lr0ma"]
-[ext_resource type="Script" uid="uid://b3p3rusnf6ff6" path="res://area_2d.gd" id="47_5vvvi"]
+[ext_resource type="Script" uid="uid://b3p3rusnf6ff6" path="res://scripts/area_2d.gd" id="47_5vvvi"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_djwxq"]
 tile_data = PackedInt32Array(0, 21, 0, 1, 27, 0, 2, 27, 0, 3, 28, 0)
@@ -1124,7 +1124,7 @@ offset_top = -886.0
 offset_right = -1469.0
 offset_bottom = -863.0
 scale = Vector2(7.08582, 6.13164)
-text = "coins score : x"
+text = "coin score : 0"
 horizontal_alignment = 1
 autowrap_mode = 2
 
