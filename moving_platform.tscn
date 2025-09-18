@@ -8,12 +8,12 @@ size = Vector2(378, 51)
 [node name="moving platform" type="AnimatableBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(264, -344.5)
+position = Vector2(-8, -57)
 shape = SubResource("RectangleShape2D_q06lf")
 one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(272.5, -272.5)
+position = Vector2(-2, 8)
 rotation = 0.00872665
 scale = Vector2(0.49537, 0.49537)
 texture = ExtResource("1_q06lf")
